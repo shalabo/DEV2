@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <%- include('share/head'); %>
+    <link rel="canonical" href="https://getbootstrap.com/docs/5.3/examples/checkout/">
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
+
+</head>
+
+<body class="bg-body-tertiary">
+
+  <div class="header">
+    <%- include('share/navbar'); %>
+  </div>
+  <div class="row" style="padding: 0px; width: 100%; height: 100%; margin: 0px;">
+    <div class="col-lg-3 row" style="height: 100%; background-color: rgba(179, 177, 177, 0.85); margin: 0px;">
+      <div class="col-7"></div>
+      <div class="mt-5 col-5">
+        <%- include('sidebar')%>
+      </div>
+    </div>
+    <div class="col-lg-9"
+      style="height: 100%; background-color: rgba(153, 155, 153, 0.692); color: white; padding: 0px 100px 0px 60px;">
+      <div class="col-10">
+        <div class="mt-5">
+          <div>
+            <h4
+              style="background-color: gray; color: white; padding: 20px; border-radius: 22px 22px 0px 0px; margin: 0px;">
+              交易紀錄
+            </h4>
+          </div>
+          <div style="background-color: rgb(189, 131, 142); border-radius: 0px 0px 22px 22px; margin: 0px;" class="row">
+            <form class="needs-validation" novalidate>
+              <% if(record=="nothing" ){%>
+                <div style="font-size: 100px;opacity: 0.3;">目前並無紀錄</div>
+                <% }else{ %>
+                  <table style="margin: 20px 10px; width: 100%; text-align: center;">
+                    <tr>
+                      <th>
+                        <h3>對方名稱</h3>
+                      </th>
+                      <th>
+                        <h3>我方商品</h3>
+                      </th>
+                      <th>
+                        <h3>交易商品</h3>
+                      </th>
+                      <th>
+                        <h3>交易時間</h3>
+                      </th>
+                    </tr>
+                    <% for (var i=0; i<record.length; i++) {%>
+                      <tr>
+                        <td>
+                          <%= record[i].memberid%>
+                        </td>
+                        <td>
+                          <%= record[i].product%>
+                        </td>
+                        <td>
+                          <%= record[i].product2%>
+                        </td>
+                        <td>
+                          <%= record[i].time%>
+                        </td>
+                      </tr>
+                      <%}%>
+                        <%}%>
+                  </table>
+          </div>
+
+
+          <!-- <button class="w-20 btn btn-secondary btn-lg mb-5" type="submit">存檔</button> -->
+          </form>
+
+        </div>
+      </div>
+    </div>
+</body>
+
+</html>

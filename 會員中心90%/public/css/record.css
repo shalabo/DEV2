@@ -1,0 +1,17 @@
+nav {
+  position: initial !important;
+}
+
+.container {
+  max-width: 1200px;
+}
+
+body {
+  overflow-y: scroll;
+}
+
+html,
+body {
+  height: 100%;
+  margin: 0;
+}
