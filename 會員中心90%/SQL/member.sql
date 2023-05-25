@@ -20,10 +20,10 @@ create table membercenter.personal
 -- 交易紀錄
 create table membercenter.record(
 `recordid` int primary key auto_increment,
-`memberid` int NOT NULL, 
-`product` varchar(20) NOT NULL, 
-`id2` int NOT NULL,
-`product2` varchar(20) NOT NULL,
+`memberid` varchar(50) NOT NULL, 
+`product` varchar(200) NOT NULL, 
+`id2` varchar(50) NOT NULL,
+`product2` varchar(200) NOT NULL,
 `success` varchar(10) NOT NULL,
 `time` timestamp default now()  );
 
