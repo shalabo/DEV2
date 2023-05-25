@@ -43,6 +43,9 @@
                         <h3>對方帳號</h3>
                       </th>
                       <th>
+                        <h3>聯絡方式</h3>
+                      </th>
+                      <th>
                         <h3>我方商品</h3>
                       </th>
                       <th>
@@ -55,16 +58,29 @@
                     <% for (var i=0; i<record.length; i++) {%>
                       <tr>
                         <td>
-                          <%= record[i].memberid%>
+                          <h5>
+                            <%= record[i].id1%>
+                          </h5>
                         </td>
                         <td>
-                          <%= record[i].product%>
+                          <h5>
+                            <%= record[i].phone%>
+                          </h5>
                         </td>
                         <td>
-                          <%= record[i].product2%>
+                          <h5>
+                            <%= record[i].product%>
+                          </h5>
                         </td>
                         <td>
-                          <%= record[i].time%>
+                          <h5>
+                            <%= record[i].product2%>
+                          </h5>
+                        </td>
+                        <td>
+                          <h5>
+                            <%= record[i].time%>
+                          </h5>
                         </td>
                       </tr>
                       <%}%>
