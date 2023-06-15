@@ -1080,10 +1080,10 @@ app.post('/member/:user/iwant', function (req, res) {
 app.get('/member/:user/record', function (req, res) {
     if (req.session.user) {
         var user = req.params.user;
-        var sql = "SELECT id1, product, product2, phone, DATE_FORMAT(time, '%Y/%m/%d %H:%i')time FROM membercenter.record INNER JOIN membercenter.personal ON record.id1=personal.username AND record.id2='test1234';"
+        var sql = "SELECT recordid, product, product2, phone, DATE_FORMAT(time, '%Y/%m/%d %H:%i')time FROM membercenter.record INNER JOIN membercenter.personal ON record.recordid=personal.username AND record.id2=?;"
         conn.query(sql, [user], function (err, results, fields) {
+            console.log(results);
             if (results.length == 0) {
-                
                 if (err) {
                     res.send('select發生錯誤', err);
                 } else {
@@ -1094,7 +1094,7 @@ app.get('/member/:user/record', function (req, res) {
                     });
                 }
             } else {
-                // console.log(results);
+                console.log(results);
                 if (err) {
                     res.send('select發生錯誤', err);
                 } else {
